@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mom and Daughter</title>
+    <link rel="stylesheet" href="./style.css"/>
+    <link rel="icon" href="./img/icon.jpg"/>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+    <section class="banner">
+        <header>
+            <a href="#" class="logo">
+                <img src="img/logo.png" alt="logo"/>
+            </a>
+            <div class="toggle" onclick="toggle()"></div>
+        </header>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="product.html">Gallary</a></li>
+            <li><a href="store.html">Store</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="form-container">
+            <div class="contactinfo">
+                <div>
+                    <h2>Contact Info</h2>
+                    <ul class="info">
+                        <li>
+                            <i class="fa fa-location"></i>
+                            <span>588 K-Block Yashoda Nagar<br/>
+                            Kanpur, U.P<br/>
+                            208011
+                        </span>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope-open-text"></i>
+                            <span>momdaughterhandicrafts<br/>@gmail.com
+                        </span>
+                        </li>
+                        <li>
+                            <i class="fa fa-phone-square-alt"></i>
+                            <span>+91 965-303-0091<br/>
+                        </span>
+                        </li> 
+                    </ul>
+                    <ul class="contact_sci">  
+                        <li>
+                            <a href="https://www.facebook.com/MomNDaughterHandicrafts/" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                            <a href="https://www.instagram.com/mom_daughter_handicrafts/" target="_blank"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-twitter-square"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="contactForm">
+                <h2>Send a Message</h2>
+                <form action="#" method="POST" onsubmit="return check();">
+                <div class="formBox">
+                    <div class="inputBox w50">
+                        <input type="text" name="first" required id="first"/>
+                        <span>First Name</span>
+                    </div>
+                    <div class="inputBox w50">
+                        <input type="text" name="last" required id="last"/>
+                        <span>Last Name</span>
+                    </div>
+                    <div class="inputBox w50">
+                        <input type="email" name="email" required id="email"/>
+                        <span>Email Address</span>
+                    </div>
+                    <div class="inputBox w50">
+                        <input type="text" name="mobile" required id="mobile"/>
+                        <span>Mobile Number</span>
+                    </div>
+                    <div class="inputBox w100">
+                        <textarea name="message" required id="message"></textarea>
+                        <span>Write your message here...</span>
+                    </div>
+                    <div class="inputBox w50">
+                        <input type="submit" value="Send" onclick="send(event)">
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script> 
+        function send(event) {
+            event.preventDefault();           
+            Email.send({
+              name:document.getElementById('first').value +" "+document.getElementById('last').value,     
+              Host : "smtp.gmail.com",
+              Username : "8765anurag@gmail.com",
+              Password : "hsenywiktqcqlmjf",
+              To : document.getElementById('email').value,
+              From : "8765anurag@gmail.com",
+              Subject : "Message from User",
+              Body : document.getElementById('message').value
+              }).then(function(response){ 
+               alert("mail is send");
+             });
+     
+        }    
+      </script>
+    <script src="./script.js"></script>
+    
+         <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+</body>
+</html>
